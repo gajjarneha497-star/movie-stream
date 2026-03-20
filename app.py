@@ -228,20 +228,50 @@ div[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
     animation:slideUp .6s ease forwards;
 }
 
-/* ── Voice box ── */
-.voice-box {
-    background:linear-gradient(135deg,#0a1830,#0d2040);
-    border:2px solid #00e5ff33; border-radius:14px;
-    padding:18px 22px; text-align:center; margin-bottom:16px;
-    animation:slideUp .4s ease forwards;
+
+st.markdown("""
+<div class="voice-box">
+    <span class="voice-mic">🎙️</span>
+    <div class="voice-label">Voice Search — type or speak a movie name / genre</div>
+    <div style="color:#8899bb;font-size:11px;margin-top:3px;">Smart filter: searches title AND genre instantly</div>
+</div>""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+st.markdown("""
+<div class="voice-box">
+    <span class="voice-mic">🎙️</span>
+    <div class="voice-label">Voice Search</div>
+    <button onclick="startVoice()" style="background:linear-gradient(135deg,#00e5ff,#00aacc);
+        border:none;border-radius:8px;padding:8px 22px;color:#07102a;
+        font-weight:700;font-size:14px;cursor:pointer;margin-top:8px;">
+        🎙️ Speak Now
+    </button>
+</div>
+<script>
+function startVoice() {
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        alert('Taro browser voice search support nathi karto. Chrome use karo.');
+        return;
+    }
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'hi-IN';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.start();
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        const inputs = window.parent.document.querySelectorAll('input[type=text]');
+        if (inputs.length > 0) {
+            const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+                window.HTMLInputElement.prototype, 'value').set;
+            nativeInputValueSetter.call(inputs[0], transcript);
+            inputs[0].dispatchEvent(new Event('input', { bubbles: true }));
+        }
+    };
+    recognition.onerror = function(event) {
+        alert('Voice error: ' + event.error);
+    };
 }
-.voice-mic { font-size:48px; display:block; margin:0 auto 8px; animation:glowPulse 2s ease-in-out infinite; }
-@keyframes glowPulse {
-    0%,100%{filter:drop-shadow(0 0 8px #00e5ff88);}
-    50%{filter:drop-shadow(0 0 24px #00e5ffcc);}
-}
-.voice-label { color:#00e5ff; font-weight:700; font-size:14px; text-shadow:0 0 10px #00e5ff66; }
-</style>
+</script>
 """, unsafe_allow_html=True)
 
 # ────────────────────────────────────────────────
