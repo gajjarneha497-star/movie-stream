@@ -274,9 +274,11 @@ def load_movies():
         "genre":["Drama","Drama","Action","Action","Action",
                  "Romance","Romance","Comedy","Horror","Animation","Comedy","Biopic","Family","Fantasy","Sports","Action"],
         "rating":[8.4,8.3,8.1,8.2,8.0,7.5,7.6,8.0,9.1,8.0,8.1,7.2,9.1,9.0,8.3,9.3],
-        "poster":["tare zameen par.png","dangal.png","bahubali.png","kgf.png","pushpa.png",
-                  "shiddat.png","satyaprem ki katha.png","totaldhamal.png",
-                  "munjya.png","zootopia.png","Housefull4.png","12fail.png","SnowWhite.png","LionKing.png","Bigil.png","Master.png"],
+        
+        "poster":["tare zameen par.png","Dangal.png","bahubali.png","KGF.png","Pushpa.png",
+          "shiddat.png","satyaprem ki katha.png","totaldhamal.png",
+          "Munjya.png","Zootopia.png","Housefull4.png","12fail.png",
+          "SnowWhite.png","LionKing.png","Bigil.png","Master.png"],
         "trailer":[
             "https://www.youtube.com/watch?v=XLUBcZQSZ70",#tare zameen par 1
             "https://www.youtube.com/watch?v=_x-YLGv9u1g",#dangal 2
