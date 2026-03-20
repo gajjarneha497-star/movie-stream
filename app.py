@@ -12,7 +12,7 @@ from pathlib import Path
 DATA_DIR    = Path(".")
 USERS_FILE  = DATA_DIR / "users.json"
 MOVIES_FILE = DATA_DIR / "movies.csv"
-POSTER_DIR  = DATA_DIR / "poster"
+POSTER_DIR  = DATA_DIR
 PARTY_FILE  = DATA_DIR / "parties.json"
 POSTER_DIR.mkdir(exist_ok=True)
 
