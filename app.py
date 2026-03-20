@@ -294,8 +294,8 @@ def load_movies():
             "https://www.youtube.com/watch?v=afEJYg0tyJ4",#12 fail  12
             "https://www.youtube.com/watch?v=aehhDN8p6Ws",#snow white 13
             "https://www.youtube.com/watch?v=mTy2Khuv_1s",#lion king 14
-            "https://www.youtube.com/watch?v=GXQtyMDnBaE",  #bigil 15
-             "https://www.youtube.com/watch?v=b6pDgJSUQQY",  #master 16
+            "https://www.youtube.com/watch?v=Co6UqFUGJqU",  #bigil 15
+             "https://www.youtube.com/watch?v=Zi9ciWeJ3fg",  #master 16
           
         ],
     }
