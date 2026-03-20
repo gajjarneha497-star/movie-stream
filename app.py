@@ -231,7 +231,8 @@ div[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
 
 st.markdown("""
 <div class="voice-box">
-    <span class="voice-mic">🎙️</span>
+<span class="voice-mic">MIC</span>
+
     <div class="voice-label">Voice Search — type or speak a movie name / genre</div>
     <div style="color:#8899bb;font-size:11px;margin-top:3px;">Smart filter: searches title AND genre instantly</div>
 </div>""", unsafe_allow_html=True)
